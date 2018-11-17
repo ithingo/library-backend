@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: rails_devise_token_seed_development
+  username: YOUR_NAME
+  password: YOUR_PASS
+
+test:
+  <<: *default
+  database: library-backend_test
+
+# production:
+#   <<: *default
+#   database: library-backend_production
+#   username: library-backend
+#   password: <%= ENV['LIBRARY-BACKEND_DATABASE_PASSWORD'] %>
